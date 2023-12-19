@@ -1,0 +1,406 @@
+
+
+/* }}}}} Google Font {{{{{ */
+    @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Jacques+Francois&family=Jomhuria&family=Jomolhari&display=swap');
+
+/* }}}} Common Css {{{{ */
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+ul, ol
+{
+    list-style: none;
+}
+a
+{
+    text-decoration: none;
+    display: inline-block;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol
+{
+    margin: 0;
+    padding: 0;
+}
+/* }}}} Variable {{{{ */
+:root
+{
+    /* FONT */
+    --primary-font: 'Jacques Francois', serif; 
+    --menu-font: 'Jomhuria', serif;
+    --price-btn-font: 'Jomolhari', serif;
+    --extra-header-font: 'Arizonia', cursive;
+
+    /* Color */
+    --primary-color: #D81B3D;
+    --secondary-color: #00030D;
+    --common-color: #FFFFFF;
+}
+/* }}}}}} Start Menu {{{{{{{{{ */
+.main_menu
+{
+    position: absolute;
+    width: 100%;
+
+}
+.main_menu ul li a
+{
+    position: relative;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: var(--menu-font);
+    color: var(--secondary-color);
+}
+.main_menu ul li a::before 
+{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all linear .3s;
+}
+.main_menu ul li a:hover::before 
+{
+    width: 100%;
+}
+/* }}}}}} End Menu {{{{{{{{{ */
+
+/* }}}}}} Start Banner {{{{{{{{{ */
+#banner
+{
+    background: url(../images/banner-bg.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.berger
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 509px;
+    margin-top: 200px;
+    margin-right: 300px;
+    animation: berger 10s linear infinite;
+}
+@keyframes berger
+{
+    0% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+}
+.banner_content
+{
+    margin-top: 70px;
+    margin-bottom: 154px;
+}
+.banner_content .banner_header_text
+{
+    margin-top: 140px;
+}
+.banner_content .banner_header_text h3
+{
+    font-size: 35px;
+    font-weight: 400;
+    font-family: var(--extra-header-font);
+    color: var(--primary-color);
+}
+.banner_content .banner_header_text h1
+{
+    font-size: 53px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.banner_content .banner_header_text p
+{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 60px;
+}
+.banner_price_btn
+{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+.banner_price_btn .price h3
+{
+    font-size: 40px;
+    font-weight: 400;
+    font-family: var(--price-btn-font);
+    color: var(--secondary-color);
+}
+.banner_price_btn .button a
+{
+    width: 240px;
+    height: 64px;
+    border-radius: 10px;
+    background: var(--primary-color);
+    font-size: 25px;
+    font-weight: 400;
+    font-family: var(--price-btn-font);
+    color: var(--common-color);
+    line-height: 64px;
+    text-align: center;
+    transition: all linear .4s;
+}
+.banner_price_btn .button a:hover
+{
+    transform: scaleY(1.1);
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+
+}
+/* }}}}}} End Banner {{{{{{{{{ */
+/* }}}}}}} Start Card Slider {{{{{{ */
+#card_slider
+{
+    width: 100%;
+    height: 422px;
+    margin-top: 80px;
+    margin-bottom: 72px;
+    
+}
+#card_slider .cards
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#card_slider .cards .card_item
+{
+    width: 270px;
+    padding: 20px 15px;
+    background: var(--primary-color);
+    border-radius: 30px;
+    position: relative;
+    color: var(--common-color);
+    margin: 50px;
+    box-shadow: 3px 8px 10px var(--secondary-color);
+}
+#card_slider .cards .card_item::after
+{
+    content: "";
+    position: absolute;
+    left: -150px;
+    top: -150px;
+    transform: translate(70%, 70%);
+    width: 150px;
+    height: 150px;
+    background: url(../images/card\ \(1\).png);
+    border-radius: 50%;
+}
+#card_slider .cards .card_item h4
+{
+    display: flex;
+    justify-content: end;
+    font-size: 30px;
+    font-family: var(--price-btn-font);
+    margin-bottom: 52px;
+}
+
+#card_slider .cards .card_item p
+{
+    font-size: 16px;
+    font-family: var(--primary-font);
+    margin-bottom: 9px;
+}
+#card_slider .cards .card_item p span
+{
+    color: #ff0;
+}
+#card_slider .card_header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#card_slider .card_header h3
+{
+    font-size: 22px;
+    font-family: var(--primary-font);
+}
+#card_slider .card_text p
+{
+    font-size: 16px;
+    font-family: var(--primary-font);
+}
+/* start Slider */
+#card_slider .cards ul
+{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#card_slider .cards ul li button
+{
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: none;
+    font-size: 0;
+    transition: all linear .3s;
+}
+#card_slider .cards ul .slick-active button
+{
+    width: 15px;
+    height: 15px;
+}
+/* end Slider */
+/* }}}}}}} End  Card Slider {{{{{{ */
+/* }}}}}}} Start Pizza {{{{{{{{ */
+#pizza
+{
+    padding: 20px 0;
+}
+/* .pizza_text
+{
+    margin-top: 110px;
+} */
+.pizza_text .comon_header h3
+{
+    font-size: 35px;
+    font-family: var(--extra-header-font);
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.pizza_text .comon_header h2
+{
+    font-size: 50px;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+.pizza_text .comon_header p
+{
+    font-size: 20px;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.pizza_text .pizza_footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pizza_text .pizza_footer .btn 
+{
+    width: 234px;
+    height: 64px;
+    font-size: 25px;
+    font-family: var(--price-btn-font);
+    color: var(--common-color);
+    background: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizza_text .pizza_footer .experience
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.pizza_text .pizza_footer .experience h3
+{
+    font-size: 150px;
+    font-family: var(--menu-font);
+    color: var(--primary-color);
+    text-align: center;
+
+}
+.pizza_text .pizza_footer .experience h6
+{
+    font-size: 20px;
+    font-family: var(--menu-font);
+    color: var(--primary-color);
+}
+.pizza_text .pizza_footer .experience h4
+{
+    font-size: 60px;
+    font-family: var(--menu-font);
+    color: var(--secondary-color);
+    display: flex;
+}
+
+/* }}}}}}} End Pizza {{{{{{{{ */
+/* }}}}}}} Start Went to Eat? {{{{{{{{ */
+#eat
+{
+    padding: 40px 0;
+}
+#eat .eat_item
+{
+    padding: 44px 20px;
+    transition: all linear .3s;
+}
+#eat .eat_item:hover
+{
+    background: var(--primary-color);
+}
+#eat .eat_item:hover .eat_img1 img
+{
+    /* background: url(../images/Rectangle\ 32.png); */
+    color: var(--common-color);
+}
+#eat .eat_item .eat_img1
+{
+    width: 100px;
+    margin: 0 auto;
+}
+#eat .eat_item .eat_text
+{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+#eat .eat_item:hover .eat_text h2
+{
+    color: var(--common-color);
+}
+#eat .eat_item:hover .eat_text p
+{
+    color: var(--common-color);
+}
+#eat .eat_item .eat_text h2
+{
+    font-size: 32px;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+}
+#eat .eat_item .eat_text p
+{
+    font-size: 20px;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+}
+#eat .eat_item .eat_img2
+{
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+/* }}}}}}} End Went to Eat? {{{{{{{{ */
+
